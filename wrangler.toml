@@ -1,0 +1,18 @@
+name = "dr-splash-website"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+not_found_handling = "404-page"
+run_worker_first = ["/api/*", "/admin", "/admin/"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "dr-splash-db"
+database_id = "ecac9e38-2ec9-43a5-95a2-1a8d70b71518"
+
+[vars]
+ADMIN_PASSWORD = "drsplash-admin"

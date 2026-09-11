@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Dr. Splash – Frische Energie in jeder Flasche. Feedback willkommen!" />
+  <title>Dr. Splash – Frische mit Charakter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/dr-splash-flat.png" type="image/png" />
+</head>
+<body>
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="/">
+      <img src="/assets/dr-splash-flat.png" alt="" width="40" height="40" />
+      <span>Dr. Splash</span>
+    </a>
+    <nav>
+      <a href="#feedback">Feedback</a>
+      <a href="#stimmen">Stimmen</a>
+      <a class="nav-admin" href="/admin">Admin</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Neu &amp; spritzig</p>
+        <h1>Hallo, ich bin <span class="accent">Dr. Splash</span></h1>
+        <p class="lead">
+          Dein frischer Begleiter fuer jeden Tag – mit einem Laecheln,
+          einem Spritzer Energie und ganz viel gute Laune in der Flasche.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#feedback">Feedback geben</a>
+          <a class="btn ghost" href="#stimmen">Stimmen lesen</a>
+        </div>
+      </div>
+
+      <div class="hero-stage" id="mascot-stage">
+        <div class="splash-particles" id="particles" aria-hidden="true"></div>
+        <div class="mascot-wrap" id="mascot">
+          <img
+            class="mascot"
+            id="mascot-img"
+            src="/assets/dr-splash.png"
+            alt="Dr. Splash Maskottchen"
+            width="360"
+            height="360"
+            draggable="false"
+          />
+          <div class="blink-overlay" id="blink" aria-hidden="true"></div>
+        </div>
+        <p class="mascot-caption">Tippe auf Dr. Splash fuer einen Splash!</p>
+      </div>
+    </section>
+
+    <section class="features">
+      <article>
+        <div class="icon">💧</div>
+        <h3>Frisch &amp; klar</h3>
+        <p>Cyan-klare Energie fuer Schule, Sport und den Alltag dazwischen.</p>
+      </article>
+      <article>
+        <div class="icon">✨</div>
+        <h3>Mit Charakter</h3>
+        <p>Dr. Splash bringt gute Laune – und hoert auf euer Feedback.</p>
+      </article>
+      <article>
+        <div class="icon">🇨🇭</div>
+        <h3>Fuer die Schweiz</h3>
+        <p>Made with love – Text und Tone auf Schweizerdeutsch-nah.</p>
+      </article>
+    </section>
+
+    <section class="panel" id="feedback">
+      <div class="panel-head">
+        <h2>Dein Feedback</h2>
+        <p>Sag uns, was du denkst. Neue Beitraege starten als <strong>ausstehend</strong> und erscheinen nach Freigabe.</p>
+      </div>
+      <form id="feedback-form" class="feedback-form" novalidate>
+        <label>
+          <span>Name <em>(optional)</em></span>
+          <input type="text" name="name" maxlength="80" placeholder="z. B. Alex" autocomplete="nickname" />
+        </label>
+        <label>
+          <span>Nachricht <em>(pflicht)</em></span>
+          <textarea name="message" rows="4" maxlength="2000" required placeholder="Was gefaellt dir an Dr. Splash?"></textarea>
+        </label>
+        <fieldset class="rating">
+          <legend>Bewertung <em>(optional)</em></legend>
+          <div class="stars" role="radiogroup" aria-label="Bewertung von 1 bis 5">
+            <button type="button" data-rating="1" aria-label="1 Stern">★</button>
+            <button type="button" data-rating="2" aria-label="2 Sterne">★</button>
+            <button type="button" data-rating="3" aria-label="3 Sterne">★</button>
+            <button type="button" data-rating="4" aria-label="4 Sterne">★</button>
+            <button type="button" data-rating="5" aria-label="5 Sterne">★</button>
+          </div>
+          <input type="hidden" name="rating" id="rating-value" value="" />
+        </fieldset>
+        <button type="submit" class="btn primary wide">Absenden</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="panel" id="stimmen">
+      <div class="panel-head">
+        <h2>Freigegebene Stimmen</h2>
+        <p>Nur freigegebene Beitraege erscheinen hier oeffentlich.</p>
+      </div>
+      <div id="feedback-list" class="feedback-list">
+        <p class="muted">Lade Stimmen…</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Dr. Splash · Mit Liebe gebaut</p>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
