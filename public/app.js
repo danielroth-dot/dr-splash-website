@@ -2,7 +2,6 @@
   const yearEl = document.getElementById('year')
   if (yearEl) yearEl.textContent = String(new Date().getFullYear())
 
-  // --- Mascot animations ---
   const mascot = document.getElementById('mascot')
   const blink = document.getElementById('blink')
   const particles = document.getElementById('particles')
@@ -49,12 +48,10 @@
     mascot.setAttribute('aria-label', 'Dr. Splash antippen fuer Splash-Effekt')
   }
 
-  // Auto blink every few seconds
   setInterval(() => {
     if (Math.random() > 0.35) doBlink()
   }, 2800)
 
-  // Soft ambient particle drip
   setInterval(() => {
     if (!particles || Math.random() > 0.55) return
     const p = document.createElement('span')
@@ -68,122 +65,4 @@
     particles.appendChild(p)
     setTimeout(() => p.remove(), 950)
   }, 1600)
-
-  // --- Rating stars ---
-  const stars = document.querySelectorAll('.stars button')
-  const ratingInput = document.getElementById('rating-value')
-  let currentRating = 0
-
-  function paintStars(n) {
-    stars.forEach((btn) => {
-      const v = Number(btn.dataset.rating)
-      btn.classList.toggle('on', v <= n)
-    })
-  }
-
-  stars.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const v = Number(btn.dataset.rating)
-      currentRating = currentRating === v ? 0 : v
-      if (ratingInput) ratingInput.value = currentRating ? String(currentRating) : ''
-      paintStars(currentRating)
-    })
-    btn.addEventListener('mouseenter', () => paintStars(Number(btn.dataset.rating)))
-    btn.addEventListener('mouseleave', () => paintStars(currentRating))
-  })
-
-  // --- Feedback form ---
-  const form = document.getElementById('feedback-form')
-  const statusEl = document.getElementById('form-status')
-
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault()
-    if (!statusEl) return
-    statusEl.className = 'form-status'
-    statusEl.textContent = 'Sende…'
-
-    const fd = new FormData(form)
-    const payload = {
-      name: String(fd.get('name') || '').trim() || undefined,
-      message: String(fd.get('message') || '').trim(),
-      rating: fd.get('rating') ? Number(fd.get('rating')) : null,
-    }
-
-    try {
-      const res = await fetch('/api/feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error || 'Fehler beim Senden')
-      statusEl.className = 'form-status ok'
-      statusEl.textContent = data.message || 'Danke! Dein Feedback wartet auf Freigabe.'
-      form.reset()
-      currentRating = 0
-      if (ratingInput) ratingInput.value = ''
-      paintStars(0)
-      spawnSplash()
-    } catch (err) {
-      statusEl.className = 'form-status err'
-      statusEl.textContent = err.message || 'Etwas ist schiefgelaufen.'
-    }
-  })
-
-  // --- Public approved list ---
-  const list = document.getElementById('feedback-list')
-
-  function starsText(n) {
-    if (!n) return ''
-    return '★'.repeat(n) + '☆'.repeat(5 - n)
-  }
-
-  function formatDate(iso) {
-    try {
-      return new Intl.DateTimeFormat('de-CH', {
-        dateStyle: 'medium',
-        timeStyle: 'short',
-        timeZone: 'Europe/Zurich',
-      }).format(new Date(iso + (iso.endsWith('Z') ? '' : 'Z')))
-    } catch {
-      return iso
-    }
-  }
-
-  async function loadFeedback() {
-    if (!list) return
-    try {
-      const res = await fetch('/api/feedback')
-      const data = await res.json()
-      const items = data.feedback || []
-      if (!items.length) {
-        list.innerHTML = '<p class="muted">Noch keine freigegebenen Stimmen – sei die erste Person!</p>'
-        return
-      }
-      list.innerHTML = items
-        .map(
-          (f) => `
-        <article class="feedback-card">
-          <div class="meta">
-            <span>${escapeHtml(f.name || 'Anonym')}</span>
-            <span>${f.rating ? `<span class="stars-static">${starsText(f.rating)}</span> · ` : ''}${escapeHtml(formatDate(f.created_at))}</span>
-          </div>
-          <p>${escapeHtml(f.message)}</p>
-        </article>`
-        )
-        .join('')
-    } catch {
-      list.innerHTML = '<p class="muted">Stimmen konnten nicht geladen werden.</p>'
-    }
-  }
-
-  function escapeHtml(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-  }
-
-  loadFeedback()
 })()

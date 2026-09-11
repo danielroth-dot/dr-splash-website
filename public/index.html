@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Dr. Splash – Frische Energie in jeder Flasche. Feedback willkommen!" />
+  <meta name="description" content="Dr. Splash – Frische Energie und spielerischer Spass. Spiele Autorennen, Flipper und Splash Jump!" />
   <title>Dr. Splash – Frische mit Charakter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,9 +24,8 @@
       <span>Dr. Splash</span>
     </a>
     <nav>
-      <a href="#feedback">Feedback</a>
-      <a href="#stimmen">Stimmen</a>
-      <a class="nav-admin" href="/admin">Admin</a>
+      <a href="#spiele">Spiele</a>
+      <a href="#ueber">Ueber</a>
     </nav>
   </header>
 
@@ -38,10 +37,11 @@
         <p class="lead">
           Dein frischer Begleiter fuer jeden Tag – mit einem Laecheln,
           einem Spritzer Energie und ganz viel gute Laune in der Flasche.
+          Spiel mit mir!
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="#feedback">Feedback geben</a>
-          <a class="btn ghost" href="#stimmen">Stimmen lesen</a>
+          <a class="btn primary" href="#spiele">Spiele starten</a>
+          <a class="btn ghost" href="#ueber">Mehr erfahren</a>
         </div>
       </div>
 
@@ -63,16 +63,16 @@
       </div>
     </section>
 
-    <section class="features">
+    <section class="features" id="ueber">
       <article>
         <div class="icon">💧</div>
         <h3>Frisch &amp; klar</h3>
         <p>Cyan-klare Energie fuer Schule, Sport und den Alltag dazwischen.</p>
       </article>
       <article>
-        <div class="icon">✨</div>
-        <h3>Mit Charakter</h3>
-        <p>Dr. Splash bringt gute Laune – und hoert auf euer Feedback.</p>
+        <div class="icon">🎮</div>
+        <h3>Spiel &amp; Spass</h3>
+        <p>Drei Mini-Games mit Dr. Splash – Autorennen, Flipper und Splash Jump.</p>
       </article>
       <article>
         <div class="icon">🇨🇭</div>
@@ -81,43 +81,39 @@
       </article>
     </section>
 
-    <section class="panel" id="feedback">
-      <div class="panel-head">
-        <h2>Dein Feedback</h2>
-        <p>Sag uns, was du denkst. Neue Beitraege starten als <strong>ausstehend</strong> und erscheinen nach Freigabe.</p>
+    <section class="games-section" id="spiele">
+      <div class="section-head">
+        <h2>Mini-Games</h2>
+        <p>Waehle ein Spiel und hilf Dr. Splash zu Sieg und Highscore!</p>
       </div>
-      <form id="feedback-form" class="feedback-form" novalidate>
-        <label>
-          <span>Name <em>(optional)</em></span>
-          <input type="text" name="name" maxlength="80" placeholder="z. B. Alex" autocomplete="nickname" />
-        </label>
-        <label>
-          <span>Nachricht <em>(pflicht)</em></span>
-          <textarea name="message" rows="4" maxlength="2000" required placeholder="Was gefaellt dir an Dr. Splash?"></textarea>
-        </label>
-        <fieldset class="rating">
-          <legend>Bewertung <em>(optional)</em></legend>
-          <div class="stars" role="radiogroup" aria-label="Bewertung von 1 bis 5">
-            <button type="button" data-rating="1" aria-label="1 Stern">★</button>
-            <button type="button" data-rating="2" aria-label="2 Sterne">★</button>
-            <button type="button" data-rating="3" aria-label="3 Sterne">★</button>
-            <button type="button" data-rating="4" aria-label="4 Sterne">★</button>
-            <button type="button" data-rating="5" aria-label="5 Sterne">★</button>
+      <div class="game-grid">
+        <a class="game-card" href="/games/autorennen.html">
+          <div class="game-card-art race">
+            <img src="/assets/dr-splash-flat.png" alt="" width="88" height="88" />
+            <span class="game-emoji" aria-hidden="true">🏎️</span>
           </div>
-          <input type="hidden" name="rating" id="rating-value" value="" />
-        </fieldset>
-        <button type="submit" class="btn primary wide">Absenden</button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-      </form>
-    </section>
-
-    <section class="panel" id="stimmen">
-      <div class="panel-head">
-        <h2>Freigegebene Stimmen</h2>
-        <p>Nur freigegebene Beitraege erscheinen hier oeffentlich.</p>
-      </div>
-      <div id="feedback-list" class="feedback-list">
-        <p class="muted">Lade Stimmen…</p>
+          <h3>Autorennen</h3>
+          <p>Weiche Hindernissen aus und sammle Punkte auf der endlosen Piste.</p>
+          <span class="game-cta">Spielen →</span>
+        </a>
+        <a class="game-card" href="/games/flipper.html">
+          <div class="game-card-art pinball">
+            <img src="/assets/dr-splash-flat.png" alt="" width="88" height="88" />
+            <span class="game-emoji" aria-hidden="true">🕹️</span>
+          </div>
+          <h3>Flipper</h3>
+          <p>Halte die Kugel im Spiel – Flipper, Bumper und Highscore!</p>
+          <span class="game-cta">Spielen →</span>
+        </a>
+        <a class="game-card" href="/games/splash-jump.html">
+          <div class="game-card-art jump">
+            <img src="/assets/dr-splash-flat.png" alt="" width="88" height="88" />
+            <span class="game-emoji" aria-hidden="true">🦘</span>
+          </div>
+          <h3>Splash Jump</h3>
+          <p>Spring von Plattform zu Plattform und klettere so hoch wie moeglich.</p>
+          <span class="game-cta">Spielen →</span>
+        </a>
       </div>
     </section>
   </main>

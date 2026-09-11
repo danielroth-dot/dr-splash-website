@@ -1,13 +1,11 @@
 {
   "name": "dr-splash-website",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Dr. Splash Marketing Website",
+  "description": "Dr. Splash Marketing Website mit Mini-Games",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "db:migrate:local": "wrangler d1 execute dr-splash-db --local --file=./schema.sql",
-    "db:migrate": "wrangler d1 execute dr-splash-db --remote --file=./schema.sql",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {

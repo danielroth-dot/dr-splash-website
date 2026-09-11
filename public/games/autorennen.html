@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Autorennen · Dr. Splash</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/dr-splash-flat.png" type="image/png" />
+</head>
+<body class="game-body">
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+  </div>
+  <header class="game-topbar">
+    <a class="brand" href="/">
+      <img src="/assets/dr-splash-flat.png" alt="" width="36" height="36" />
+      <span>Dr. Splash</span>
+    </a>
+    <a class="btn ghost" href="/#spiele">← Zurueck</a>
+  </header>
+  <div class="game-shell">
+    <div class="game-hud">
+      <div class="score-box">Punkte: <span id="score">0</span></div>
+      <div class="best-box">Best: <span id="best">0</span></div>
+    </div>
+    <div class="game-stage" id="stage">
+      <canvas id="game" width="420" height="700"></canvas>
+      <div class="game-overlay" id="overlay">
+        <h1>Autorennen</h1>
+        <p>Steuere Dr. Splash, weiche den Hindernissen aus und fahre so weit wie moeglich!</p>
+        <button type="button" class="btn primary" id="start-btn">Los geht’s!</button>
+      </div>
+    </div>
+    <p class="game-help">← → oder A/D · auf dem Handy tippen/ziehen</p>
+  </div>
+  <script src="/games/autorennen.js" defer></script>
+</body>
+</html>
