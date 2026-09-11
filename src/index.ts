@@ -10,7 +10,7 @@ app.get('/api/health', (c) =>
   c.json({
     ok: true,
     brand: 'Dr. Splash',
-    games: ['autorennen', 'flipper', 'memory', 'schminkspiel', 'bowling', 'tennis'],
+    games: ['autorennen', 'flipper', 'memory', 'bowling', 'tennis'],
   }),
 )
 
