@@ -8,18 +8,31 @@
   const bubble = document.getElementById('speech-bubble')
 
   const PHRASES = [
-    'Hey ich bin kitzelig',
-    'Lass das',
-    'Hihi',
+    'Hey ich bin kitzelig!',
+    'Lass das!',
+    'Hihi!',
     'Autsch, meine Kappe!',
-    'Mehr Wasser, weniger Finger!',
     'Stopp, ich kicher!',
     'Das kitzelt!',
     'Hey, Hände weg vom Cap!',
     'Hihihi, nochmal!',
-    'Platsch! Das war nah!',
-    'Ohje, ich spritze gleich!',
+    'Platsch!',
+    'Blub blub!',
+    'Ich bin Dr. Splash!',
+    'Mehr Spiele, bitte!',
+    'Uuuh, kalt!',
+    'Nicht so fest!',
+    'Zack, Splash!',
+    'Na, Spassvogel?',
+    'Tickle-Alarm!',
+    'Meine Sneakers!',
+    'Cool bleiben!',
     'Kicherwasser aktiviert!',
+    'Hehe, das juckt!',
+    'Vorsicht, ich wackle!',
+    'Du hast meinen Cap gefunden!',
+    'Wieder kitzeln? Hihi!',
+    'Ich bin voller Energie!',
   ]
 
   let busy = false
