@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Flipper · Dr. Splash</title>
+  <title>Bowling · Dr. Splash</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -13,7 +13,7 @@
 <body class="game-body">
   <div class="bg-blobs" aria-hidden="true">
     <span class="blob b1"></span>
-    <span class="blob b3"></span>
+    <span class="blob b2"></span>
   </div>
   <header class="game-topbar">
     <a class="brand" href="/">
@@ -30,13 +30,14 @@
     <div class="game-stage" id="stage">
       <canvas id="game" width="420" height="700"></canvas>
       <div class="game-overlay" id="overlay">
-        <h1>Flipper</h1>
-        <p>Dr. Splash ist die Kugel! Halte ihn mit den Flippern im Spiel und triff die Bumper.</p>
+        <h1>Bowling</h1>
+        <p>Ziele und rolle Dr. Splash als Bowlingkugel – räume die Flaschen-Pins ab!</p>
         <button type="button" class="btn primary" id="start-btn">Los geht’s!</button>
       </div>
     </div>
-    <p class="game-help">Z / ← links · / → rechts · Touch: linke/rechte Haelfte</p>
+    
+    <p class="game-help">← → zielen · Leertaste / Tippen zum Rollen</p>
   </div>
-  <script src="/games/flipper.js" defer></script>
+  <script src="/games/bowling.js" defer></script>
 </body>
 </html>

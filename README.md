@@ -1,6 +1,6 @@
 # Dr. Splash Website
 
-Marketing-Website fuer **Dr. Splash** (de-CH, ss statt ß) mit animiertem Landing und drei Mini-Games.
+Marketing-Website fuer **Dr. Splash** (Deutsch) mit animiertem Landing und sechs Mini-Games.
 
 ## Live
 
@@ -8,18 +8,18 @@ Marketing-Website fuer **Dr. Splash** (de-CH, ss statt ß) mit animiertem Landin
 |---|---|
 | **Website** | https://dr-splash-website.midi-caravan.workers.dev |
 
-> Cloudflare Workers **temporary preview account** (Midi Caravan). Claim within ~50 minutes of the latest deploy so it stays yours:
-> https://dash.cloudflare.com/claim-preview?claimToken=u3t6axUQWzd5W-BYfhyfl4bh6qTHnt53ddRwOyA6hxk
->
-> After claiming (or with your own Cloudflare login), re-run `npx wrangler deploy` for a permanent workers.dev URL under your account.
+> Cloudflare Workers **temporary preview account** (Midi Caravan). Claim after deploy so it stays yours, then re-run `npx wrangler deploy` for a permanent workers.dev URL under your account.
 
 ## Features
 
 - Animiertes Landing mit Dr. Splash (Bounce, Blink, Splash-Partikel)
-- Drei Mini-Games (Canvas, mobilfreundlich):
+- Sechs Mini-Games (Canvas, mobilfreundlich):
   1. **Autorennen** – endloses Top-Down-Rennen, Hindernisse ausweichen, Tropfen sammeln
   2. **Flipper** – Pinball mit Dr. Splash als Kugel, Flipper & Bumper
-  3. **Splash Jump** – Endless Jumper von Plattform zu Plattform
+  3. **Memory** – klassisches Memory mit Flaschen-/Splash-Motiven
+  4. **Flasche Schminkspiel** – Accessoires auf Dr. Splash (Lippenstift, Brille, Hut, …)
+  5. **Bowling** – Dr. Splash als Kugel, Flaschen-Pins abraeumen
+  6. **Tennis** – Court-Mini-Game mit Dr. Splash als Schlaeger
 - Kein Feedback-Formular, kein Admin, keine D1-Datenbank
 
 ## Spielen
@@ -28,7 +28,10 @@ Marketing-Website fuer **Dr. Splash** (de-CH, ss statt ß) mit animiertem Landin
 |---|---|
 | Autorennen | ← → oder A/D · Touch ziehen |
 | Flipper | Z/← links, X/→ rechts · Touch linke/rechte Haelfte |
-| Splash Jump | ← → oder A/D · Touch ziehen · Geraeteneigung |
+| Memory | Tippen zum Umdrehen |
+| Schminkspiel | Accessoire waehlen, auf Flasche tippen, Fertig |
+| Bowling | ← → zielen · Leertaste / Tippen zum Rollen |
+| Tennis | ← → oder A/D · Touch ziehen |
 
 Jedes Spiel hat Startbildschirm, Punkte/Bestwert (localStorage) und Neustart.
 
