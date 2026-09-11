@@ -6,9 +6,12 @@ Marketing-Website fuer **Dr. Splash** (Deutsch) mit animiertem Landing und sechs
 
 | | URL |
 |---|---|
-| **Website** | https://dr-splash-website.midi-caravan.workers.dev |
+| **Website** | https://dr-splash-website.clean-sycamore.workers.dev |
 
-> Cloudflare Workers **temporary preview account** (Midi Caravan). Claim after deploy so it stays yours, then re-run `npx wrangler deploy` for a permanent workers.dev URL under your account.
+> Cloudflare Workers **temporary preview account** (Clean Sycamore). Claim within ~60 minutes of the latest deploy so it stays yours:
+> https://dash.cloudflare.com/claim-preview?claimToken=wjPikHmIjCHjA6mfIemu2toowD8wjr85Ax1zuKNIOI0
+>
+> After claiming (or with your own Cloudflare login), re-run `npx wrangler deploy` for a permanent workers.dev URL under your account.
 
 ## Features
 
