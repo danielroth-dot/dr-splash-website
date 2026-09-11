@@ -8,7 +8,10 @@ Marketing-Website fuer **Dr. Splash** (de-CH, ss statt ß) mit animiertem Landin
 |---|---|
 | **Website** | https://dr-splash-website.midi-caravan.workers.dev |
 
-> Deployed via Cloudflare Workers. Bei Preview-Account ggf. neu deployen mit `npx wrangler deploy` (oder `--temporary`).
+> Cloudflare Workers **temporary preview account** (Midi Caravan). Claim within ~50 minutes of the latest deploy so it stays yours:
+> https://dash.cloudflare.com/claim-preview?claimToken=u3t6axUQWzd5W-BYfhyfl4bh6qTHnt53ddRwOyA6hxk
+>
+> After claiming (or with your own Cloudflare login), re-run `npx wrangler deploy` for a permanent workers.dev URL under your account.
 
 ## Features
 
