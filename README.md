@@ -1,5 +1,9 @@
 # Dr. Splash Website
 
+**Aktuelle Live-URL (mit Impressum):** https://dr-splash-website.island-albatross.workers.dev
+
+Ältere `*.workers.dev`-Preview-URLs ohne Impressum bitte nicht mehr teilen.
+
 Marketing-Website fuer **Dr. Splash** (Deutsch) mit animiertem Landing und fuenf Mini-Games.
 
 ## Live
