@@ -529,3 +529,46 @@ img { max-width: 100%; height: auto; display: block; }
 @media (min-width: 861px) and (max-width: 1024px) {
   .game-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* —— Legal / Impressum —— */
+.legal-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+.legal-page h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin: 0 0 0.5rem;
+}
+.legal-lead {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+}
+.legal-card {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(20, 120, 160, 0.12);
+  border-radius: 1.25rem;
+  padding: 1.25rem 1.4rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 30px rgba(20, 80, 120, 0.06);
+}
+.legal-card h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.65rem;
+  color: var(--cyan-deep);
+}
+.legal-card p {
+  margin: 0 0 0.75rem;
+  line-height: 1.55;
+  font-weight: 600;
+}
+.legal-card p:last-child { margin-bottom: 0; }
+.legal-card a { color: var(--cyan-deep); font-weight: 800; }
+.legal-back { margin-top: 1.5rem; }
+.site-footer a {
+  color: var(--cyan-deep);
+  text-decoration: none;
+  font-weight: 800;
+}
+.site-footer a:hover { text-decoration: underline; }
